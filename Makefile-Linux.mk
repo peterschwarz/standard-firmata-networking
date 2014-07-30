@@ -1,11 +1,6 @@
-### DISCLAIMER
-### This is an example Makefile and it MUST be configured to suit your needs.
-### For detailled explanations about all the avalaible options,
-### please refer to https://github.com/sudar/Arduino-Makefile/blob/master/arduino-mk-vars.md
-
 ### PROJECT_DIR
 ### This is the path to where you have created/cloned your project
-PROJECT_DIR       = /home/{{ YOUR USERNAME }}/path/to/MyAwesomeProject
+PROJECT_DIR       = .
 
 ### ARDMK_DIR
 ### Path to the Arduino-Makefile directory.
@@ -14,6 +9,11 @@ ARDMK_DIR         = $(PROJECT_DIR)/Arduino-Makefile
 ### ARDUINO_DIR
 ### Path to the Arduino application and ressources directory.
 ARDUINO_DIR       = /usr/share/arduino
+
+
+### ARDUINO_LIBS
+ARDUINO_LIBS = Wire SPI Ethernet Servo FirmataMaster EthernetStream
+
 
 ### USER_LIB_PATH
 ### Path to where the your project's libraries are stored.
@@ -25,7 +25,7 @@ BOARD_TAG         = uno
 
 ### MONITOR_BAUDRATE
 ### It must be set to Serial baudrate value you are using.
-MONITOR_BAUDRATE  = 115200
+MONITOR_BAUDRATE  = 9600
 
 ### AVR_TOOLS_DIR
 ### Path to the AVR tools directory such as avr-gcc, avr-g++, etc.

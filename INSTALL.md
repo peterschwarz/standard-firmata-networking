@@ -1,23 +1,5 @@
 
-# How to install and use the Bare-Arduino-Project
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-
-- [About](#about)
-- [Installation Guide](#installation-guide)
-	- [Toolbox](#toolbox)
-		- [OS X](#os-x)
-		- [Linux](#linux)
-	- [1. Install `avr-gcc`, `binutils`, `avr-libc` and `avrdude`](#1-install-avr-gcc-binutils-avr-libc-and-avrdude)
-		- [OS X](#os-x-1)
-		- [Linux](#linux-1)
-	- [2. Clone `Bare-Arduino-Project` repository from Github](#2-clone-bare-arduino-project-repository-from-github)
-	- [3. Install `pySerial`](#3-install-pyserial)
-	- [4. Test that evrything is up and running](#4-test-that-evrything-is-up-and-running)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# How to install and use the standard-firmata-ethernet
 
 ## About
 
@@ -77,27 +59,19 @@ $ sudo apt-get install gcc-avr binutils avr-libc avrdude
 
 Make sure everything is up and running by running `avr-gcc -v` and `avrdude -v`.
 
-### 2. Clone `Bare-Arduino-Project` repository from Github
+### 2. Clone `standard-firmata-ethernet` repository from Github
 
 Simply clone the repo:
 
 ```Bash
-$ git clone https://github.com/WeAreLeka/Bare-Arduino-Project path/to/MyAwesomeProject
+$ git clone https://github.com/peterschwarz/standard-firmata-ethernet
 ```
 
 Initialize and update submodules:
 
 ```Bash
-$ cd path/to/MyAwesomeProject
+$ cd standard-firmata-ethernet
 $ git submodule update --init --recursive
-```
-
-Create a Github repository and push to it:
-
-```Bash
-$ cd path/to/MyAwesomeProject
-$ git remote set-url origin https://github.com/{{YOUR GITHUB USERNAME}}/MyAwesomeProject
-$ git push origin master
 ```
 
 ### 3. Install `pySerial`
@@ -116,25 +90,18 @@ Then install `pySerial`:
 $ pip install pyserial
 ```
 
-### 4. Test that evrything is up and running
+### 4. Build the project
 
-To make sure you're up and running to hack autism, we are going to compile some code.
+Let's build 'standard-firmata-ethernet':
 
-First `cd` to `src/myProject` folder:
-
-```Bash
-$ cd path/to/MyAwesomeProject
-$ cd src/myProject
-```
-
-Then copy the `Makefile-Example.mk`:
+First `cd` to `standard-firmata-ethernet` folder and copy the `Makefile-<os name>.mk` for your system:
 
 ```Bash
-$ cp ../../Makefile-OSX.mk ./Makefile
+$ cp Makefile-OSX.mk ./Makefile
 
 # or if you're running Linux
 
-$ cp ../../Makefile-Linux.mk ./Makefile
+$ cp Makefile-Linux.mk ./Makefile
 ```
 
 Then compile and upload your code to an **Arduino Uno**:
