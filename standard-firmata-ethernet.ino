@@ -49,6 +49,19 @@
 #define REGISTER_NOT_SPECIFIED -1
 
 /*==============================================================================
+ * Ethernet Settings
+ *============================================================================*/
+
+#define MAC_ADDRESS 0xDE,0xAD,0xBE,0xEF,0xFE,0xED
+
+// uncomment to get IP from DHCP server
+// #define DHCP 1
+
+#define STATIC_IP_ADDRESS 192,168,2,100
+#define PORT 5000;
+
+
+/*==============================================================================
  * GLOBAL VARIABLES
  *============================================================================*/
 
@@ -593,14 +606,17 @@ EthernetStream ethernet;
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+byte mac[] = { MAC_ADDRESS };
 
 // uncomment to get IP from DHCP server
 //#define DHCP 1
 
 // comment to user static IP
-IPAddress ip(192,168,2,100);
-int port = 5000;
+#ifndef DHCP
+  IPAddress ip(STATIC_IP_ADDRESS);
+#endif
+
+int port = PORT;
 
 
 void setup() 
