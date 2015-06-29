@@ -1,2 +1,3 @@
-bin/uno
-Makefile
+.pioenvs/
+.sconsign.dblite
+*.swp
