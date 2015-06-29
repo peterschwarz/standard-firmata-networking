@@ -6,7 +6,9 @@ Deploy Standard Firamta which uses a networking stream instead of the serial por
 ## Installation
 
 1. Install [PlatformIO](http://platformio.org/)
-2. Build and upload to your device 
+2. `git clone https://github.com/peterschwarz/standard-firmata-networking`
+3. `git submodule init`
+4. Build and upload to your device 
     
     ```
     platformio run --target upload
